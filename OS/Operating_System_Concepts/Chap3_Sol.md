@@ -48,7 +48,7 @@ fibn = fibn-1 + fibn-2
 
 - - -
 
-3.9 **echo server**란 client로부터 무언가를 받았을 때, 되받아 반응하는 서버입니다. 예를 들어, client가 _Hello there!_를 보냈을 때, 그 서버는 client로부터 받은 그것을 그대로 반응할 것입니다 - 그것은 바로, _Hello there!_
+3.9 **echo server**란 client로부터 무언가를 받았을 때, 되받아 반응하는 서버입니다. 예를 들어, client가 _Hello there!_ 를 보냈을 때, 그 서버는 client로부터 받은 그것을 그대로 반응할 것입니다 - 그것은 바로, _Hello there!_
 
 - - -
 
