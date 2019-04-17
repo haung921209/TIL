@@ -31,7 +31,7 @@ d. 고정크기 및 가변 크기 메세지
 
 fib0 = 0
 fib1 = 1
-fibn=fibn-1 + fibn-2
+fibn = fibn-1 + fibn-2
 
 ```
 
