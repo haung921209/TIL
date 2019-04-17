@@ -9,8 +9,8 @@ OS에 의해 제공되는 서비스들 중 두번째는 아래의 하드웨어�
 
 Ans : 
 
-- **Program execution**
-- **I/O operations**
-- 
-- 
-- 
+- **Program execution** : OS는 파일 contents(혹은 section들)을 메모리에 로드하고, 이것들이 시작하게 합니다. User-level 프로그램은 신뢰할 수 없어 CPU 시간에 적절하게 할당할 수 없습니다.
+- **I/O operations** : Disk, tape, serial lines나 다른 device들은 반드시 very low level에서 교류해야 합니다. 사용자는 해당 요청을 장치 또는 컨트롤러별 명령으로 변환하는 동안, 오직 device 지정과 그것에 대해 수행할 작업만 지정하면 됩니다. 사용자 수준 프로그램은 액세스 해야 하는 기기에만 액세스 할 수 있고, 사용하지 않을 때만 액세스 할 수 없습니다.
+- **File-system manipulation** : 파일을 생성하거나, 지우거나, 재배치하거나 이름을 지정하는 데에 있어서는 사용자가 하지 않아도 되는 다양한 세부 사항들이 있습니다. 
+- **Communications** : 
+- **Error detections** : 

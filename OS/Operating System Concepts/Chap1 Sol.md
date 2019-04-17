@@ -18,4 +18,4 @@ c. 포터블 컴퓨터(handheld computers)
 
 - - -
 
-
+1.3 
