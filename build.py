@@ -31,9 +31,11 @@ Inspired by
 * [@jbranchaud](https://github.com/jbranchaud/til)
 * [@milooy](https://github.com/milooy/TIL)
 * [@channprj](https://github.com/channprj/TIL)
+* [@aweekj](https://github.com/aweekj/TIL)
+
 ## License
-© 2016 Hanju Jo
-This repository is licensed under the MIT license. See `LICENSE` for details.
+© 2019 Hyungmin
+
 """
 
 ###################################
