@@ -9,8 +9,8 @@ OS에 의해 제공되는 서비스들 중 두번째는 아래의 하드웨어�
 
 Ans : 
 
-- 'Program execution' 
-- 'I/O operations'
+- **Program execution**
+- **I/O operations**
 - 
 - 
 - 
