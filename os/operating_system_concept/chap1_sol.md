@@ -125,7 +125,7 @@ The different levels are based on access speed as well as size. In general, the 
 
 1.12 Consider an SMP system similar to the one shown in Figure 1.6 Illustrate with an example how data residing in memory could in fact have a different value in each of the local caches.
 
-![Figure 1.6](OS/Operating_System_Concepts/img/Figure1-6.png)
+![Figure 1.6](os/operating_system_concept/img/figure1_6.png)
 
 
 Ans.
