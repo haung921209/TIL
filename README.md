@@ -17,7 +17,6 @@
 ## Algorithms
 
 ## Os
-* [Temp.md](OS/temp.md)
 
 ## Os/operating_system_concepts
 * [Chap1_sol.md](OS/Operating_System_Concepts/Chap1_Sol.md)
@@ -47,6 +46,9 @@ Inspired by
 * [@aweekj](https://github.com/aweekj/TIL)
 
 ## License
+© 2019 Hyungmin
+
+cense
 © 2019 Hyungmin
 
 /channprj/TIL)

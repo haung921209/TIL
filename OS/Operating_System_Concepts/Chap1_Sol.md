@@ -134,3 +134,80 @@ Say processor 1 reads data A with value 5 from main memory into its local cache.
 
 
 ---
+
+
+1.13 Discuss, with examples, how the problem of maintaining coherence of cached data manifests itself in the following processing environments : 
+
+a. Single-processor systems
+b. Multiprocessor systems
+c. Distributed systems
+
+Ans.
+
+- In single-processor systems, the memory needs to be updated when a processor issues updates to cached values. These updates can be performed immediately or in a lazy manner.
+- In a multiprocessor system, different processors might be caching the same memory location in its local caches. When updates are made, the other cached locations need to be invalidated of updated.
+- In distributed systems, consistency of cached memory values is not an issue. However, consistency problems might arise when a client caches file data.
+
+
+---
+
+1.14 Describe a mechanism for enforcing memory protection in orrder to prevent a program from modifying the memory associated with other programs.
+
+Ans.
+
+The processor could keep track of what locations are associated with each process and limit access to locations that are outside of a program's extent. Information regarding the extent of a program's memory could be maintained by using base and limits registers and by performing a check for every memory access.
+
+---
+
+1.15 Which network configuration - LAN or WAN - would best suit the following environment?
+
+a. A campus student union
+b. Several campus locations across a statewide university system
+c. A neighborhood
+
+Ans.
+
+a. LAN
+b. WAN
+c. LAN or WAN
+
+---
+
+1.16 Describe some of the challenges of designing operating systems for mobile devices compared with designing operating systems for traditional PCs.
+
+Ans.
+
+Besides a core kernel, middleware must be designed in mobile operating systems to support a set of software frameworks that provide additional services to application developers. 
+
+Different from using a physical keyboard and mouse, mobile devices need to features a touch screen and let user interact with the system by pressing and swiping fingers across the screen.
+
+Mobile operating system must balance the performance with the battery life.
+
+Mobile operating system must have a good support for external peripheral devices like GPS, HDMI which is essential for mobile devices.
+
+Mobile operating system must consider the limited resources since the mobile devices are much smaller compared with PC
+
+
+---
+
+1.17 What are some advantages of peer-to-peer systems over client-server systems?
+
+Ans.
+
+Peer-to-peer is useful because services are distributed across a collection of peers, rather than having a single, centralized server. Peer-to-peer provides fault tolerance and redundancy. Also, because peers constantly migrate, they can provide a level of security over a server that always exists at a known location on the Internet. Peer-to-peer systems can also potentially provide higher network bandwidth because you can collectively use all the bandwidth of peers, rather than the single bandwidth that is availble to a single server
+
+---
+
+1.18 Describe some distributed applications that would be appropriate for a peer-to-peer system
+
+Ans.
+
+Essentially anything that provides content, in addition to existing services such as file services, distributed directory services such as domain name services, and distributed e-mail services.
+
+---
+
+1.19 Identify several advantages and several disadvantages of open-source operating systems. Include the types of people who would find each aspect to be an advantage or a disadvantage.
+
+Ans.
+
+Open source operating systems have the advantages of having many people working on them, many people debugging them, ease of access and distribution, and rapid update cycles. Further, for students and programmers, there is certainly an advantage to being able to view and modify the source code. Typically open source operating systems are free for some forms of use, usually just requiring payment for support services. Commercial operating system companies usually do not like the competition that open source operating systems bring because there features are difficult to compete against. Some open source operating systems do not offer paid support programs. Some companies avoid open source projects because they need paid support, so that they have some entity to hold accountable if there is a problem or they need help fixing an issue. Finally, some complain that a lack of discipline in the coding of open source operating systems means that backward compatibility is lacking making upgrades difficult, and that the frequent release cycle exacerbates these issues by forcing users to upgrade frequently.
