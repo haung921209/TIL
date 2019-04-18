@@ -4,11 +4,11 @@
 오늘 배운 내용을 간결하게 정리하여 모아둔다.
 ---
 ## Categories
-* [Database](#Database)
-* [Algorithms](#Algorithms)
-* [Os](#OS)
-* [Os/operating_system_concepts](#OS/Operating_System_Concepts)
-* [Os/operating_system_concepts/img](#OS/Operating_System_Concepts/img)
+* [Database](#database)
+* [Algorithms](#algorithms)
+* [Os](#os)
+* [Os/operating_system_concept](#os/operating_system_concept)
+* [Os/operating_system_concept/img](#os/operating_system_concept/img)
 
 ---
 
@@ -18,13 +18,13 @@
 
 ## Os
 
-## Os/operating_system_concepts
-* [Chap1_sol.md](OS/Operating_System_Concepts/Chap1_Sol.md)
-* [Chap3_sol.md](OS/Operating_System_Concepts/Chap3_Sol.md)
-* [Chap4_sol.md](OS/Operating_System_Concepts/Chap4_Sol.md)
-* [Chap2_sol.md](OS/Operating_System_Concepts/Chap2_Sol.md)
+## Os/operating_system_concept
+* [Chap1_sol.md](os/operating_system_concept/chap1_sol.md)
+* [Chap3_sol.md](os/operating_system_concept/chap3_sol.md)
+* [Chap4_sol.md](os/operating_system_concept/chap4_sol.md)
+* [Chap2_sol.md](os/operating_system_concept/chap2_sol.md)
 
-## Os/operating_system_concepts/img
+## Os/operating_system_concept/img
 
 ---
 ## Rules
@@ -47,6 +47,8 @@ Inspired by
 
 ## License
 © 2019 Hyungmin
+
+Hyungmin
 
 cense
 © 2019 Hyungmin
