@@ -7,8 +7,9 @@
 * [Database](#database)
 * [Algorithms](#algorithms)
 * [Os](#os)
-* [Os/operating_system_concept](#os/operating_system_concept)
-* [Os/operating_system_concept/img](#os/operating_system_concept/img)
+* [Os/operating_system_concept_exercise](#os/operating_system_concept_exercise)
+* [Os/operating_system_concept_exercise/img](#os/operating_system_concept_exercise/img)
+* [Os/osc_concepts](#os/osc_concepts)
 
 ---
 
@@ -18,13 +19,16 @@
 
 ## Os
 
-## Os/operating_system_concept
-* [Chap1_sol.md](os/operating_system_concept/chap1_sol.md)
-* [Chap3_sol.md](os/operating_system_concept/chap3_sol.md)
-* [Chap4_sol.md](os/operating_system_concept/chap4_sol.md)
-* [Chap2_sol.md](os/operating_system_concept/chap2_sol.md)
+## Os/operating_system_concept_exercise
+* [Chap1_sol.md](os/operating_system_concept_exercise/chap1_sol.md)
+* [Chap3_sol.md](os/operating_system_concept_exercise/chap3_sol.md)
+* [Chap4_sol.md](os/operating_system_concept_exercise/chap4_sol.md)
+* [Chap2_sol.md](os/operating_system_concept_exercise/chap2_sol.md)
 
-## Os/operating_system_concept/img
+## Os/operating_system_concept_exercise/img
+
+## Os/osc_concepts
+* [Chap2_concepts.md](os/osc_concepts/chap2_concepts.md)
 
 ---
 ## Rules
@@ -43,17 +47,6 @@ Inspired by
 * [@jbranchaud](https://github.com/jbranchaud/til)
 * [@milooy](https://github.com/milooy/TIL)
 * [@channprj](https://github.com/channprj/TIL)
-* [@aweekj](https://github.com/aweekj/TIL)
-
-## License
-© 2019 Hyungmin
-
-Hyungmin
-
-cense
-© 2019 Hyungmin
-
-/channprj/TIL)
 * [@aweekj](https://github.com/aweekj/TIL)
 
 ## License
