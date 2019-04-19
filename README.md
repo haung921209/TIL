@@ -5,6 +5,8 @@
 ---
 ## Categories
 * [Database](#database)
+* [Database/database_system_concepts](#database/database_system_concepts)
+* [Database/database_system_concepts/exercises](#database/database_system_concepts/exercises)
 * [Algorithms](#algorithms)
 * [Os](#os)
 * [Os/operating_system_concept_exercise](#os/operating_system_concept_exercise)
@@ -14,6 +16,10 @@
 ---
 
 ## Database
+
+## Database/database_system_concepts
+
+## Database/database_system_concepts/exercises
 
 ## Algorithms
 
