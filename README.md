@@ -20,6 +20,7 @@
 ## Database/database_system_concepts
 
 ## Database/database_system_concepts/exercises
+* [Chap1.md](database/database_system_concepts/exercises/chap1.md)
 
 ## Algorithms
 
