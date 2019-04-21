@@ -39,7 +39,7 @@ A.
 
 '''c
 
-DROP TABLE <base table name> <behavior>;
+"DROP TABLE <base table name> <behavior>;"
 
 '''
 
