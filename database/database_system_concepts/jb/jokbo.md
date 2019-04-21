@@ -275,8 +275,47 @@ A.
     ~~~
 
 
+---
 
 
+7. 온라인 서점을 모델링하는 ERD를 다음과 같이 가정한다.
+
+![dbjokbo2007_no7_1](https://user-images.githubusercontent.com/14533484/56469928-e7d82280-647a-11e9-8bb7-eb798d988be6.png)
+
+
+가) 개체 집합(entity set)들과 이들의 주 키(Primary key)들을 기술하라.
+나) 서점이 음악 카세트들과 CD들을 취급 품목(collection)에 추가한다고 가정한다. 같은 음악을 카세트 또는 CD로 서로 다른 가격으로 표현할 수 있다. 이러한 추가사항을 모델링 하기 위해서 기존 ERD를 확장하라.(단 shopping basket(시장바구니)에 대한 효과는 무시한다.)
+다) shopping basket이 책들, music cassette들, 또는 compact disk들의 임의의 결합을 포함할 수 있도록 하는 경우를 모델링 하기 위해서 generalization을 사용하여 ERD를 확장하라.
+
+
+A. 온라인 서점을 모델링하는 ERD를 다음과 같이 가정한다.
+
+가) 개체 집합(entity set) 들과 이들의 주 키(primary key)들을 기술하라.
+
+
+![dbjokbo2007_no7_2](https://user-images.githubusercontent.com/14533484/56469925-e7d82280-647a-11e9-9b5f-f8907c1d0f70.png)
+
+나) 서점이 음악 카세트들과 CD들을 취급 품목(collection)에 추가한다고 가정한다. 같은 음악(music item)을 cassette 또는 CD로 서로 다른 가격으로 표현할 ㅜㅅ 있다. 이러한 추가사항을 모델링 하기 위해서 기존 ERD를 확장하라.
+
+
+
+![dbjokbo2007_no7_3](https://user-images.githubusercontent.com/14533484/56469926-e7d82280-647a-11e9-83b6-12b8e657451a.png)
+
+
+다) shopping basket이 책들, music cassette들, 또는 compact disk들의 임의의 결합을 포함할 수 있도록 하는 경우를 모델링 하기 위해서 generalization을 사용하여 ERD를 확장하라.
+
+
+![dbjokbo2007_no7_4](https://user-images.githubusercontent.com/14533484/56469927-e7d82280-647a-11e9-9f0f-89a293106453.png)
+
+
+
+
+
+
+
+
+
+---
 
 9. 다음 ERD 기호에 대한 적절한 설명을 기술하고 UML Class diagram notation으로 표시하라(05)
 
