@@ -55,7 +55,8 @@ directories = []
 
 for file in files:
     if os.path.isdir(file):
-        directories.append(file)
+        if file!='img' :
+            directories.append(file)
 
 if 'drafts' in directories:
     directories.remove('drafts')

@@ -7,6 +7,7 @@
 * [Database](#database)
 * [Database/database_system_concepts](#database/database_system_concepts)
 * [Database/database_system_concepts/exercises](#database/database_system_concepts/exercises)
+* [Database/database_system_concepts/jb](#database/database_system_concepts/jb)
 * [Algorithms](#algorithms)
 * [Os](#os)
 * [Os/operating_system_concept_exercise](#os/operating_system_concept_exercise)
@@ -20,7 +21,11 @@
 ## Database/database_system_concepts
 
 ## Database/database_system_concepts/exercises
+* [Chap2.md](database/database_system_concepts/exercises/chap2.md)
 * [Chap1.md](database/database_system_concepts/exercises/chap1.md)
+
+## Database/database_system_concepts/jb
+* [Jokbo.md](database/database_system_concepts/jb/jokbo.md)
 
 ## Algorithms
 
