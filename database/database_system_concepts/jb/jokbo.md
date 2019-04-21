@@ -49,7 +49,7 @@ CASCADE는 DROP명령이 항상 성공적으로 수행되고, 해당 table을 �
 
 
 
-(마) logical data independence vs. physical data independence (06)
+(마) logical data independence vs. physical data independence (06, 08)
 
 
 
@@ -93,7 +93,7 @@ A.  client/server computing에서 platform에 맞게 새롭게 application을 �
     host-based application의 경우 더 작은 환경이나 LAN기반의 환경에 재설계 될 경우 downsizing이 필요하다.
 
 
-(차) type vs relation (07)
+(차) type vs relation (07, 08)
 
 A. 
 
@@ -108,6 +108,17 @@ A.
 A.  Disjoint : ERD에서 entity가 단 하나의 lower - level entity set에만 포함될 수 있는 것.
     Overlapping : ERD에서 entity가 여러 lower - level entity set에 포함될 수 있는 것.ㅓ
 
+
+(타) foreign key (08)
+
+A1. 어떠한 relvar R2의 속성들의 value가 또 다른 relvar R1의 후보키들의 value와 match가 될 때, 이를 foreign key라 부른다.
+
+A2. EMP table의 DEPT# value는 모든 employee가 department에 할당되어 있음을 보이기 위하여, table DEPTa안에 DEPT#의 값이 반드시 존재하여야 한다. 이렇게, table DEPT의 primary키를 참조(reference)한, table EMP안의 column DEPT#를 foreign key라고 한다.
+
+
+(파) bill - of - material relationship (08)
+
+A. 다이어그램에서는, 한 종류의 entity type만을 포함하는 relationship이 존재한다. bill-of-material relationship은 어떠한 entity type이 다른 entity type을 구성요소로서 포함하고 있는 관계이며 일종의 unary relationship관계 혹은 특별한 경우의 binary relationship이다.
 
 
 ---
@@ -152,6 +163,49 @@ A.
 
 A.  카탈로그 릴레이션 변수 자체를 기술하는 엔트리를 포함하는 것. 즉, 카탈로그 안에 카탈로그 자신에 대한 정보도 포함됨을 의미한다.
     위의 질의는 TABLES와 COLUMS를 JOIN한 후 COLCOUNT의 값이 3 미만인 table record를 가져와 그 중에 TABNAME과 COLNAME을 출력하라는 질의이다.
+
+
+
+
+3-1. 뷰와 기본 릴레이션의 차이점을 기술하고, 뷰에 대한 질의처리 과정을 설명하라. (08)
+
+A. 
+
+(1) 기본 릴레이션은 각기 **고유명**이 있고, DB에 **독립적**으로 존재한다. 뷰는 **기본 릴레이션에서 유도된** 또 하나의 릴레이션이다. 뷰는 독립적으로 존재하는 것이 아니고 **가상**으로 존재한다.
+
+(2) 뷰의 질의 처리 과정
+
+- 뷰의 정의 sql이 시스템 카탈로그에 저장된다.
+- 실체적 질의 sql문에서 참조된 뷰명은 시스템에서 시스템 카탈로그에 저장된 정의로 치환된다.
+- 최적화 과정을 거쳐서 변환된다.
+
+ex)
+
+i) s라는 기본 릴레이션이 있을 때 아래와 같이 GOOD_SUPPLIER라는 뷰를 정의할 수 있다.
+
+~~~
+CREATE VIEW GOOD_SUPPLIER AS
+SELeCT S#, STSTUS, CITY FROM S WHERE STSTUS >20;
+~~~
+
+아래와 같은 표현식은 시스템이 다음과 같이 수정한다.
+
+~~~
+SELECT S# STSTUS FROM GOOD_SUPPLIER WHERE CITY = "SEOUL";
+~~~
+
+ii) 수정
+
+~~~
+(SELECT S#, STSTUS FROM (SELECT S#, STSTUS, CITY FROM S WHERE STSTUS>20) WHERE CITY = "SEOUL";)
+
+~~~
+
+iii) 이것은 다시 다음과 같이 최적화(단순화)되어 처리된다.
+
+(SELECT S#, STATUS FROM S WHeRE STATUS > 20 AND CITY = "SEOUL";)
+
+
 
 
 ---
