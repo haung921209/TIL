@@ -43,10 +43,10 @@ A.	테이블을 삭제하는 sql문은 DROP이며, 사용법은 다음과 같다
 4.	Aggregation 개념을 정의하고 이 개념이 유용한 예를 두 가지만 설명하라.
 
 
-![figure1](img/db/dbjokbo2005_no4_1.png)
+![dbjokbo2005_no4_1](https://user-images.githubusercontent.com/14533484/56466765-d7ab4d80-6450-11e9-8cca-4d0b6e94b828.png)
 
 
-![figure2](./img/db/dbjokbo2005_no4_2.png)
+![dbjokbo2005_no4_2](https://user-images.githubusercontent.com/14533484/56466768-e134b580-6450-11e9-8713-c4358f819af1.png)
 
 
 
