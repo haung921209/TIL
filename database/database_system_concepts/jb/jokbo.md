@@ -110,6 +110,11 @@ A.  Disjoint : ERD에서 entity가 단 하나의 lower - level entity set에만 
 
 
 
+---
+
+
+
+
 2.	DBA의 주요 역할을 5가지만 설명하라.(05)
 
 
@@ -134,6 +139,9 @@ A.
 (2) 레코드 검색과정 - 우선 사용자가 external level에서 특정 레코드를 검색하기 위해 질의를 하면 External/Conceptual mapping을 통해 conceptual level의 질의로 변형되고, 다시 Conceptual / Internal mapping을 통해 internal level의 질의로 변형되게 된다. internal level에소ㅓ는 질의에 대한 정보를 찾게 되고 이 정보를 다시 Conceptual/ Internal mapping을 통해 conceptual level에서의 scheme로 변경하게 되고 conceptual level에서는 이 정보를 External/Conceptual mapping을 통해 External level의 형태로 변경하여 사용자에게 질의에 대한 결과가 보여지게 된다.
 
 
+---
+
+
 
 3. 카타로그가 자술적(self-describing)이란 것은 무엇을 의미하는가? 다음의 질의는 무엇을 의미하는가? (06)
 
@@ -145,6 +153,8 @@ A.
 A.  카탈로그 릴레이션 변수 자체를 기술하는 엔트리를 포함하는 것. 즉, 카탈로그 안에 카탈로그 자신에 대한 정보도 포함됨을 의미한다.
     위의 질의는 TABLES와 COLUMS를 JOIN한 후 COLCOUNT의 값이 3 미만인 table record를 가져와 그 중에 TABNAME과 COLNAME을 출력하라는 질의이다.
 
+
+---
 
 
 
@@ -176,7 +186,7 @@ A.  카탈로그 릴레이션 변수 자체를 기술하는 엔트리를 포함�
 
 
 
-
+---
 
 
 
@@ -229,7 +239,10 @@ A. 데이터 모델의 구성요소는 구조(structure), 조작(manipulation), 
     
 
 
-6. 클라이언트-데이터베이스 서버 구조를 설명하고 이것이 갖는 장점을 기술하시오. 일반적인 Two-tier 클라이언트 / 서버 구조에서 발생하는 문제점을 기술하고, Three - tier 구조에서 이러한 문제들의 처리과정을 설명하라. 특히 웹 환경에 적합한 구조를 기술하고 그 이유를 설명하라. (05)
+---
+
+
+6. 클라이언트-데이터베이스 서버 구조를 설명하고 이것이 갖는 장점을 기술하시오. 일반적인 Two-tier 클라이언트 / 서버 구조에서 발생하는 문제점을 기술하고, Three - tier 구조에서 이러한 문제들의 처리과정을 설명하라. 특히 웹 환경에 적합한 구조를 기술하고 그 이유를 설명하라. (05, 06, 07)
 
 
 (1) client-database server architecture 설명
@@ -244,6 +257,22 @@ A. 데이터 모델의 구성요소는 구조(structure), 조작(manipulation), 
 
 (6) web환경에 적합한 구조의 이유 설명
 
+
+6-1. ERD에 적합한 릴레이션 스킴들을 만드는 경우를 고려한다. 다음 경우에 적합한 스킴들의 축소를 위한 방법을 기술하라. (07)
+
+![dbjokbo2007_no6_1](https://user-images.githubusercontent.com/14533484/56469932-f0c8f400-647a-11e9-8bcb-828acec3e1df.png)
+
+
+A. 
+
+- 개체 집합 A에서 개체 집합 B로 가는 다대 일 관계 집합 AB를 생각해 보자. 앞에서 소개된 테이블 생성 방안을 이용하면 A, B, BA의 3개의 테이블을 얻을 수 있다.  A는 관계 AB에 전체적으로 참가 한다고 가정하자. 즉 개체 집합 A의 모든 개체 a는 관계 AB에 참가해야 한다. 그러면 테이블 A와 테이블 AB를 조합하여 두 테이블의 열들의 합집합으로 구성되는 하나의 테이블을 만들 수 있다.
+- 예를 들어 그림의 개체 - 관계 다이어그램을 생각해 보자. 개체 - 관계 다이어그램의 2중선은 account_branch에 account가 전체적으로 참가한다는 것을 가리킨다. 그러므로 어떤 계좌도 특정 지사와의 연관 없이 존재할 수 없다. 게다가 관계 집합 account_branch는 account로부터 branch로 다대일의 관계를 가진다. 그러므로 account_branch를 위한 테이블을 account를 위한 테이블과 결합시켜 다음의 2개의 테이블만 만들면 된다.
+
+
+    ~~~
+    account = (account_number, balance, branch_name)
+    branch = (branch_name, branch_city, assets)    
+    ~~~
 
 
 
