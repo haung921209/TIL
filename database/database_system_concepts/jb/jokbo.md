@@ -36,7 +36,9 @@ C.	Partial constraints : 한 entity는 lower-level entity set중 하나에 속�
 A.	
 테이블을 삭제하는 sql문은 DROP이며, 사용법은 다음과 같다.
 
+'''
 DROP TABLE <base table name> <behavior>;
+'''
 
 여기에서 <behavior>는 RESTRICT 혹은 CASCADE가 될 수 있다.
 RESTRICT는 현재 그 table이 사용 중이라면, DROP이 취소되는 것을 의미한다.
