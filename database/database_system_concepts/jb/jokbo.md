@@ -43,10 +43,35 @@ A.	테이블을 삭제하는 sql문은 DROP이며, 사용법은 다음과 같다
 4.	Aggregation 개념을 정의하고 이 개념이 유용한 예를 두 가지만 설명하라.
 
 
+(1) Aggregation의 개념
+
+관계들 간의 관계를 표현하기 위해 관계를 사위 개채로 취급하는 추상화 기법이다.
+
+(2) Aggregation이 유용한 예
+
+"어떤 직원이 어떤 지사에서 수행한 일을 관리하는 관리자를 기록하고자 한다"면 다음과 같은 4항 관계를 생각할 수 있다.
+
+
+
 ![dbjokbo2005_no4_1](https://user-images.githubusercontent.com/14533484/56466765-d7ab4d80-6450-11e9-8cca-4d0b6e94b828.png)
+
+그러나 i) 관계 manages에 있는 모든 개체 employee, branch, job 조합은 관계 works-on에도 있으므로 위의 ERD는 과다한 정보가 들어있다. 또한 ii) 관계 works-on 과 manages는 하나의 관계 집합으로 결합될 수 있는 것처럼 보이지만 employee, branch, job 조합은 관리자를 갖지 않기 때문에 두 관계를 결합될 수 없다.
+
+따라서 aggregation을 적용하면 위의 두가지 단점을 해결할 수 있다. 다음 그림은 aggregation을 적용한 ERD를 나타낸다.
 
 
 ![dbjokbo2005_no4_2](https://user-images.githubusercontent.com/14533484/56466768-e134b580-6450-11e9-8713-c4358f819af1.png)
+
+
+
+
+
+
+
+
+
+d
+
 
 
 
