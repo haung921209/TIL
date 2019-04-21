@@ -1,7 +1,7 @@
 1.	다음을 간단히 설명하시오
 
 
-(가)	Manual navigation vs automatic navigation(05)
+(가)	Manual navigation vs automatic navigation (05, 07)
 
 
 
@@ -34,7 +34,9 @@ C.	Partial constraints : 한 entity는 lower-level entity set중 하나에 속�
 
 
 A.	테이블을 삭제하는 sql문은 DROP이며, 사용법은 다음과 같다.
+'''
     DROP TABLE <base table name> <behavior>;
+'''
     여기에서 <behavior>는 RESTRICT 혹은 CASCADE가 될 수 있다.
     RESTRICT는 현재 그 table이 사용 중이라면, DROP이 취소되는 것을 의미한다.
     CASCADE는 DROP명령이 항상 성공적으로 수행되고, 해당 table을 사용 중인 모든 것들도 DROP됨을 의미한다.
@@ -84,6 +86,21 @@ A. weak entity set에는 primary key가 없다. 때문에 weak entity가 종속�
 A.  client/server computing에서 platform에 맞게 새롭게 application을 설계해야 한다.
     host-based application의 경우 더 작은 환경이나 LAN기반의 환경에 재설계 될 경우 downsizing이 필요하다.
 
+
+(차) type vs relation (07)
+
+A. 
+
+- 타입은 우리가 이야기 하고자 하는 것이고, 관계는 우리가 이야기 하고자 하는 것에 관한 것에 관해 말하는 것이다.
+- 타입은 고용인 번호와 이름, 부서 번호 그리고 봉급. 관계는 "특정 고용인 번호를 가진 고용인은 특정 이름을 가지고 특정 부서에서 일하며, 특정 봉급을 벌어들인다."라는 형태의 사실적인 표현.
+- 타입과 관계는 둘 다 필요하다. / 타입과 관계는 필요할 뿐 아니라, 충분하다 / 타입과 관계는 같은 것이 아니다.
+
+
+
+(카) disjoint vs overlapping constraints (07)
+
+A.  Disjoint : ERD에서 entity가 단 하나의 lower - level entity set에만 포함될 수 있는 것.
+    Overlapping : ERD에서 entity가 여러 lower - level entity set에 포함될 수 있는 것.ㅓ
 
 
 
@@ -174,7 +191,36 @@ A.  카탈로그 릴레이션 변수 자체를 기술하는 엔트리를 포함�
 ![dbjokbo2005_no5_1](https://user-images.githubusercontent.com/14533484/56466974-0d9e0100-6454-11e9-8f0a-89dceb5278e0.png)
 
 
+5-1. 데이터 모델의 구성요소를 설명하고, 다음 4가지 모델을 비교 설명하여라. (06)
 
+가) 관계형 모델
+나) 계층적 모델
+다) 네트워크 모델
+라) 개체 / 관계성 (Entity / Relationship) 모델
+
+A. 데이터 모델의 구성요소는 구조(structure), 조작(manipulation), 무결성(Integrity)이다. 구조는 데이터가 표현되는 형태를 말하고, 조작은 해당 모델에서 어떠한 연산자들을 통해 데이터가 관리되는가에 대한 것이다. 마지막으로 무결성은 해당 모델에 의해 표현된 데이터들이 어떻게 무결성 제약을 포함하는가에 대한 것이다.
+
+가) 관계형 모델
+    a) 구조적 관점 : 데이터베이스에서 데이터는 사용자에게 테이블의 형태로 인식된다.
+    b) 조작적 관점 : 사용자 수준의 연산자는 주어진 예전의 테이블로부터 새로운 테이블을 유도하는 연산자들로써 최소한 SELECT(RESTRICT), PROJECT, JOIN 연산자를 제공한다.
+    c) 무결성 관점 : 테이블들은 참조 무결성 등의 무결성 제약을 포함한다.
+    
+나) 계층적 모델
+    a) 구조적 관점 : 데이터들은 사용자에게 트리의 형태(세그먼트, 링크)의 계층 구조로 인식된다.
+    b) 조작적 관점 : 최소한 데이터의 탐색에 필요한 연산자를 제공한다.
+    c) 무결성 관점 : 데이터들은 부모 / 자식 관계가 링크에 의해 명시적으로 표현되므로 부모 / 자식간의 무결성 제약을 포함한다.
+
+다) 네트워크 모델
+    a) 구조적 관점 : 데이터들은 사용자에게 그래프 기반의 네트워크 형태로 인식된다.
+    b) 조작적 관점 : 최소한의 데이터 검색에 대한 연산자를 제공한다.
+    c) 무결성 관점 : 명시적 링크를 이용하여 오너(Owner) / 멤버(Member)관계를 표현하기 때문에 오너와 멤버 사이의 무결성 제약을 포함한다.
+
+라) 개체 / 관계성 (Entity / Relationship) 모델
+    a) 구조적 관점 : 데이터는 유형, 무형의 객체(object)로써의 개체와 개체 집합고ㅓㅏ 개체 집합 간의 여러 유형의 관계를 나타내는 관계성(relationship)으로 인식된다.
+    b) 조작적 관점 : 검색 / 갱신에 대한 연산자를 제공한다.
+    c) 무결성 관점 : 개체 간의 관계성을 통해 개체 간에 지켜져야 할 무결성 제약이 포함된다.
+    
+    
 
 
 6. 클라이언트-데이터베이스 서버 구조를 설명하고 이것이 갖는 장점을 기술하시오. 일반적인 Two-tier 클라이언트 / 서버 구조에서 발생하는 문제점을 기술하고, Three - tier 구조에서 이러한 문제들의 처리과정을 설명하라. 특히 웹 환경에 적합한 구조를 기술하고 그 이유를 설명하라. (05)
