@@ -9,9 +9,9 @@
 * [Database/database_system_concepts/exercises](#database/database_system_concepts/exercises)
 * [Database/database_system_concepts/jb](#database/database_system_concepts/jb)
 * [Algorithms](#algorithms)
+* [Img/db](#img/db)
 * [Os](#os)
 * [Os/operating_system_concept_exercise](#os/operating_system_concept_exercise)
-* [Os/operating_system_concept_exercise/img](#os/operating_system_concept_exercise/img)
 * [Os/osc_concepts](#os/osc_concepts)
 
 ---
@@ -29,6 +29,8 @@
 
 ## Algorithms
 
+## Img/db
+
 ## Os
 
 ## Os/operating_system_concept_exercise
@@ -36,8 +38,6 @@
 * [Chap3_sol.md](os/operating_system_concept_exercise/chap3_sol.md)
 * [Chap4_sol.md](os/operating_system_concept_exercise/chap4_sol.md)
 * [Chap2_sol.md](os/operating_system_concept_exercise/chap2_sol.md)
-
-## Os/operating_system_concept_exercise/img
 
 ## Os/osc_concepts
 * [Chap2_concepts.md](os/osc_concepts/chap2_concepts.md)
@@ -59,6 +59,12 @@ Inspired by
 * [@jbranchaud](https://github.com/jbranchaud/til)
 * [@milooy](https://github.com/milooy/TIL)
 * [@channprj](https://github.com/channprj/TIL)
+* [@aweekj](https://github.com/aweekj/TIL)
+
+## License
+© 2019 Hyungmin
+
+s://github.com/channprj/TIL)
 * [@aweekj](https://github.com/aweekj/TIL)
 
 ## License

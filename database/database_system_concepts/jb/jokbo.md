@@ -43,4 +43,10 @@
 4.	Aggregation 개념을 정의하고 이 개념이 유용한 예를 두 가지만 설명하라.
 
 
-(
+![figure1](./img/db/dbjokbo2005_no4_1.png)
+
+
+![figure2](./img/db/dbjokbo2005_no4_2.png)
+
+
+
