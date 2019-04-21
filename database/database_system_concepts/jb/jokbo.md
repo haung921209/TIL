@@ -121,6 +121,13 @@ A2. EMP table의 DEPT# value는 모든 employee가 department에 할당되어 �
 A. 다이어그램에서는, 한 종류의 entity type만을 포함하는 relationship이 존재한다. bill-of-material relationship은 어떠한 entity type이 다른 entity type을 구성요소로서 포함하고 있는 관계이며 일종의 unary relationship관계 혹은 특별한 경우의 binary relationship이다.
 
 
+
+
+
+
+
+
+
 ---
 
 
@@ -299,17 +306,50 @@ A. 데이터 모델의 구성요소는 구조(structure), 조작(manipulation), 
 6. 클라이언트-데이터베이스 서버 구조를 설명하고 이것이 갖는 장점을 기술하시오. 일반적인 Two-tier 클라이언트 / 서버 구조에서 발생하는 문제점을 기술하고, Three - tier 구조에서 이러한 문제들의 처리과정을 설명하라. 특히 웹 환경에 적합한 구조를 기술하고 그 이유를 설명하라. (05, 06, 07)
 
 
-(1) client-database server architecture 설명
+(1) client-database server architecture 설명 : 사용자와 상호작용하고, 데이터에 대한 요청을 생성하는 Client application단과 그 요청을 처리하고 답장하고, 컨트롤하고, 보안과 권한 조정을 제공하고, 저장공간을 제공하는 서버단을 합쳐 Client-database server architecture라 합니다.
 
-(2) client - database server architecture 장점 기술
+(2) client - database server architecture 장점 기술 : 
 
-(3) client - database server architecture 문제점 기술
 
-(4) Three - tier architecture에서 client - database server architecture의 문제점 처리과정 기술
+- 훨씬 효과적인 일의 분담을 제공한다
+- job에 대한 horizontal, vertical scaling을 제공한다 (작업의 효율적인 분할 가능)
+- application은 일반적으로 smaller client computer configuration으로 좋은 performance를 제공한다.
+- user들은 자신의 client에서 사용해왔던 tool을 그대로 사용할 수 있다.
+- client는 더 많은 data에 접근 가능하다
+- valuable data의 손실이나 부적절한 access로부터 보호를 해준다.
+
+
+(3) client - database server architecture 문제점 기술:
+
+- 동시에 다수의 client가 server에 접속을 할 경우 서버에 부하가 생기며 시스템 전체에 정체 현상을 유발시킨다.
+- fat client 문제 발생
+- server로 사용되는  mainframe의 설치, 유지, 보수 비용이 크다.
+- 개별 user의 독립성과 개인적인 system 사용이 어렵다
+- security cost가 높아진다.
+
+
+(4) Three - tier architecture에서 client - database server architecture의 문제점 처리과정 기술:
+
+- application server를 여러개 배치하여 server의 load balancing이 쉬워진다.
+- fat client의 임무를 application server에 두어 client를 가볍게 한다.
+- application server의 설치, 유지, 보수 비용은 mainframe보다 저렴하기 때문에 incremental scale이 가능하다.
+- application server의 적절한 변경을 통해 user의 요구 충족 기간이 2-tier보다 짧아진다.
+- security를 위한 server를 따로 두어 관리한다.
 
 (5) web환경에 적합한 구조 기술
 
-(6) web환경에 적합한 구조의 이유 설명
+- Tier 1(client) : user interface, perhaps performing some simple logic processing (e.g. input validation)
+- Tier 2(application server) : business logic, data processing logic
+- Tier 3(database server) : data validation, database access
+
+(6) web환경에 적합한 구조의 이유 설명 :
+
+- web환경에서 user는 헤아릴 수 없을 정도로 많기 때문에 기존의 2-tier 방식은 server에 상당한 부하를 주고 있다. 이에 비해 위에서 제안한 구조는 다음과 같은 장점이 있다.
+- server의 기능이 대폭 줄어 비용감소 및 관리가 쉬워진다
+- 많은 user에 대한 business logic을 하나의 application server에 중앙 집중화 함으로서 application의 중앙집중화를 유도한다. (S/W 분산에 대한 문제 제거)
+- 하나의 tier가 다른 tier에 영향을 끼치지 않으면서 대체되거나 수정될 수 있다.
+- core business를 database function으로부터 분리시킴으로써 load balancing을 구현하기 쉽다.
+- 위의 장점들은 3 - tier가 web환경에 적합하다는 근거이다.
 
 
 6-1. ERD에 적합한 릴레이션 스킴들을 만드는 경우를 고려한다. 다음 경우에 적합한 스킴들의 축소를 위한 방법을 기술하라. (07, 08)
@@ -327,6 +367,12 @@ A.
     account = (account_number, balance, branch_name)
     branch = (branch_name, branch_city, assets)    
     ~~~
+
+6-2  weak entity set은 identifying entity set의 주 키 속성을 추가함으로써 strong entity set으로 만드는 것이 가능하다. 만약 그렇게 한다면 어떤 종류의 중복이 생기는지를 설명하라.
+
+Ans.
+
+Identifying entity set의 primary key가 explicit 하게 저장되면, weak - entity set을 strong entity set으로 만들 수 있다. 그런데 이 때 identifying relation의 attribute가 strong entity set의 attribute의 중복이 된다. 예제에서 loan_number가 payment에 저장되면 entity set payment schema에는 4개의 속성(loan_number, payment_number, payment_date, payment_amount)가 저장되는데, 이 때 loan_payment schema에 저장된 단 두가지 속성인 (loan_number, payment_number) attribute가 중복된다.
 
 
 ---
@@ -365,11 +411,66 @@ A. 온라인 서점을 모델링하는 ERD를 다음과 같이 가정한다.
 
 
 
+7-1. 다음의 관계형 스킴을 사용하여 답하라. 밑줄은 기본 키 속성을 의미한다 (06, 07)
+
+~~~
+    S(S#, SNAME, STATUS, CITY)
+    P(P#, PNAME, COLOR, WEIGHT, CITY)
+    SP(S#, P#, QTY)
+
+~~~
+
+가) 기본 릴레이션과 뷰의 차이점을 설명하시오 : 기본 릴레이션은 각기 고유명이 있고, DB에 독립적으로 존재한다. 뷰는 기본 릴레이션에서 유도된 또 하나의 릴레이션이다. 뷰는 독립적으로 존재하는 것이 아니고 가상으로 존재한다.
+
+나) 다음의 뷰 정의를 가정한다
+
+~~~
+    CREATE VIEW GOOD_SUPPLIER AS
+        SELECT S#, STATUS, CITY FROM S WHERE STATUS>20;
+        
+~~~
+
+다음의 질의를 고려하자
+~~~
+SELECT S#, STATUS FROM GOOD_SUPPLIER WHERE CITY = "SEOUL"
+~~~
+이 질의가 원하는 것이 무엇인가? 이 질의를 DBMS가 처리하는 과정을 설명하라.
+
+- 질의 : S 릴레이션에서 STATUS > 20 인 조건을 만족하는 S#, STATUS, CITY 속성들로 이루어진 뷰 GOOD_SUPPLIER 으로부터 CITY 명이 SEOUL 인 튜플들을 선택하여 속성값 S#과 STATUS로 이루어진 릴레이션을 구성한다.
+
+- 처리과정 :
+
+(1) 뷰의 정의 sql이 시스템 카탈로그에 저장된다.
+(2) 실제적 질의 sql문에서 참조된 뷰명은 시스템에서 시스템 카탈로그에 저장된 정의로 치환된다.
+
+~~~
+    (SELECT S#, STATUS
+     FROM ( SELECT S#, STATUS, CITY
+            FROM S
+            WHERE STATUS > 20)
+    WHERE CITY = "SEOUL";)
+~~~
+
+(3) 최적화 과정을 거쳐서
+
+~~~
+    (SELECT S#, STATUS
+     FROM S
+     WHERE STATUS > 20 AND CITY = "SEOUL";)
+~~~
+    와 같이 변환된다.
+    와 같이 변환된다.
+    와 같이 변환된다.
+    와 같이 변환된다.
+    와 같이 변환된다.
+    와 같이 변환된다.
+    와 같이 변환된다.
 
 
 
 
----
+
+
 
 9. 다음 ERD 기호에 대한 적절한 설명을 기술하고 UML Class diagram notation으로 표시하라(05)
 
