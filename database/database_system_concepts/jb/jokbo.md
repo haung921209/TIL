@@ -431,9 +431,11 @@ A. 온라인 서점을 모델링하는 ERD를 다음과 같이 가정한다.
 ~~~
 
 다음의 질의를 고려하자
+
 ~~~
 SELECT S#, STATUS FROM GOOD_SUPPLIER WHERE CITY = "SEOUL"
 ~~~
+
 이 질의가 원하는 것이 무엇인가? 이 질의를 DBMS가 처리하는 과정을 설명하라.
 
 - 질의 : S 릴레이션에서 STATUS > 20 인 조건을 만족하는 S#, STATUS, CITY 속성들로 이루어진 뷰 GOOD_SUPPLIER 으로부터 CITY 명이 SEOUL 인 튜플들을 선택하여 속성값 S#과 STATUS로 이루어진 릴레이션을 구성한다.
@@ -458,13 +460,11 @@ SELECT S#, STATUS FROM GOOD_SUPPLIER WHERE CITY = "SEOUL"
      FROM S
      WHERE STATUS > 20 AND CITY = "SEOUL";)
 ~~~
-    와 같이 변환된다.
-    와 같이 변환된다.
-    와 같이 변환된다.
-    와 같이 변환된다.
-    와 같이 변환된다.
-    와 같이 변환된다.
-    와 같이 변환된다.
+    
+    
+    
+와 같이 변환된다.
+
 
 
 
@@ -494,14 +494,7 @@ ERD의 설명 : loan 개체는  borrower 관계 집합의 적어도 한 관계�
 
 
 
-
-![dbjokbo2005_no9_2](https://user-images.githubusercontent.com/14533484/56467990-0d583280-6461-11e9-
-9a4d-d3a911a2d0ca.png)
-
-
-
-
-
+![dbjokbo2005_no9_2](https://user-images.githubusercontent.com/14533484/56467990-0d583280-6461-11e9-9a4d-d3a911a2d0ca.png)
 
 
 
