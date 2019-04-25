@@ -69,4 +69,8 @@ flag의 경우에는 변수는 하나이지만, 그 값들을 사용하는 경�
 
 
 
+(2) 자원 관리
 
+<img width="612" alt="스크린샷 2019-04-25 오전 9 45 11" src="https://user-images.githubusercontent.com/14533484/56702416-daeb5580-673e-11e9-98f0-4e8d1712e6e0.png">
+
+자원관리를 하는 변수에는 rlimit이 있습니다. 
