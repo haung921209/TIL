@@ -53,15 +53,44 @@ public:
         }
     }
     //erase
-    //eraseIdx 위치에 있는 index 제거.
-    void erase(int eraseIdx){
-        
+    //eraseIdx번째에 있는 node 제거.
+    void erase (int eraseIdx) {
+        try{
+            if(eraseIdx < 0 || eraseIdx >= size)throw InvalidIndexException();
+            else if(eraseIdx==0){
+                ListNode<T> * temp=head->next;
+                delete head;
+                head=temp;
+                size--;
+            }
+            else{
+                ListNode<T> * dest = head, *temp;
+                for(int i=0;i<eraseIdx-1;i++)dest=dest->next;
+                temp=dest->next->next;
+                dest->next=temp;
+                size--;
+            }
+        }
+        catch(InvalidIndexException e){
+            cerr<<"Invalid index error\n";
+
+        }
     }
     //search
     //있으면 index return, 없으면 -1 return
-    T search(T value){
-
-    }
+    int search(T value){
+       try{
+           ListNode<T> * temp = head;
+           for(int i=0;i<size;i++){
+               if(temp->value==value)return i;
+               temp=temp->next;
+           }
+           return -1;
+        }
+        catch(InvalidIndexException e){
+            cerr<<"Invalid index error\n";
+        }
+     }
 
 
 
