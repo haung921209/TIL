@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 # TIL
 > Today I Learned
@@ -69,4 +70,10 @@ s://github.com/channprj/TIL)
 
 ## License
 © 2019 Hyungmin
+=======
+# TIL
+For Saving my code made during study
+
+
+>>>>>>> b6b53163dc01e6d5254088338e3529f47b001c2f
 
