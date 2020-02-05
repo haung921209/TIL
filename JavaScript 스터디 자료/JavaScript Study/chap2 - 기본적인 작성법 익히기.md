@@ -1,0 +1,244 @@
+# 기본적인 작성법 익히기
+
+## 1. JavaScript의 기본적인 표기
+
+### 1) script 요소를 기술하는 장소
+
+- body 요소의 안(임의의 위치)
+
+  - 웹페이지의 가독성 / 보수성의 관점 등에서 바람직 하지 않음
+  - 현재는 일부 예외를 제외하고는 거의 사용하지 않음
+
+- <body> 요소의 안(</body> 직전)
+
+  - 웹페이지의 화면 갱신을 끝낸 후 로딩하는 방식으로 화면 갱신 속도가 개선됨.
+
+- </head> 요소의 안
+
+  - "함수 호출 script 요소보다 함수 정의 script 요소를 먼저 기술 해야 한다"는 규칙의 예외를 위함
+  - 두번째 요소의 예외의 경우 사용하는 방식
+
+- 외부에서 정의 후 Import
+
+  - 무시되는 경우
+
+    ```javascript
+    <script type="text/javascript" src="lib.js">
+    window.alert('안녕하세요, 자바스크립트!'); //ignored
+    </script>
+    ```
+
+  - 무시되지 않는 경우(분리된 경우)
+
+    ```javascript
+    <script type="text/javascript" src="lib.js"></script>
+    <script type="text/javascript">
+    window.alert('안녕하세요, 자바 스크립트!');
+    </script>
+    ```
+
+  - JavaScript 기능이 무효인 환경에서 대체 콘텐츠 표시하게 하기
+
+    ```javascript
+    <script type="text/javascript">
+    document.write('안녕하십니까?')
+    </script>
+    <noscript><p>자바스크립트를 꺼두셨군요.</p></noscript>
+    ```
+
+  - Anchor 태그에 집어넣기 - Javascript 의사 프로토콜
+
+    ```html
+    //글씨 클릭시 javascript 코드 동작
+    <a href="JavaScript:window.alert('안녕하세요, 자바스크립트!');">대화상자표시</a>
+    ```
+
+## 2. 변수와 상수
+
+### 1) 변수 선언하기
+
+- var
+- let(ES2015 구문)
+  - 변수의 중복을 허가하지 않는다
+  - 블록스코프를 인식한다(= var에 비해 더 세세하게 변수의 유효 범위를 관리할 수 있다)
+
+### 2) 식별자의 명명 규칙(필수)
+
+- 첫번째 문자는 영문자 / 언더스코어 / 달러 표시 중 하나여야 한다
+- 두번째 문자 이후에는 첫번째에서 사용할 수 있는 문자 또는 숫자 이어야 한다.
+- 변수명에 포함된 영문자의 대문자 / 소문자는 구별되어야 한다
+- JavaScript에서 의미를 갖는 [예약어](https://ko.wikipedia.org/wiki/예약어)가 아니어야 한다.
+
+### 3) 상수 선언하기(ES2015)
+
+## 3. 데이터형
+
+### 1) JavaScript의 주요 데이터형
+
+- 기본형
+  - 숫자형
+  - 문자열형 - 작은 따옴표 / 큰 따옴표로 감싸인 0개 이상의 문자 집합
+  - 논리형 - 참 / 거짓
+  - [심벌형](https://developer.mozilla.org/ko/docs/Glossary/Symbol) - 심벌을 나타냄(ES2015)
+  - 특수형(null / undefined) - 값이 미정이 된 것을 나타냄
+- 참조형
+  - 배열 - 데이터의 집합(각 요소에는 인덱스 번호로 접근 가능)
+  - [객체](https://developer.mozilla.org/ko/docs/Learn/JavaScript/Objects/Basics) - 데이터의 집합(각 요소에는 이름으로 접근 가능)
+  - 함수 - 일련의 처리(절차)의 집합
+
+### 2) 리터럴
+
+- 데이터형에 보관되는 값 그 자체 또는 값의 표현방법
+- 숫자 리터럴
+  
+  - 정수 리터럴(10진수, 16진수, 8진수, 2지수), 부동 소수점 리터럴로 구분 가능
+- 문자형 리터럴
+  - 작은 따옴표(') 또는 큰 따옴표(")로 감쌀 필요가 있음.
+  - 이스케이프 시퀀스(Escape Sequence)
+    - \b(백 스페이스), \f(새로운 페이지), \n(개행), \r(복귀), \t(탭문자), \\(\마크), \'(작은 따옴표), \"(큰 따옴표), \xXX(Latin-1 문자(XX는 16진수), \uXXXX(Unicode 문자(XXXX는 16진수), \u{XXXXX}(0xffff(4개의 16진수)을 넘는 Unicode 문자)
+    - 문자형 리터럴 안에서 목적한 바를 표현하기 위해 사용 가능.
+
+- [템플릿 문자열](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Template_literals)(ES2015)
+
+  - 내장된 표현식을 허용하는 문자열 리터럴
+
+    ```javascript
+    `string text`
+    
+    `string text line 1
+     string text line 2`
+    
+    `string text ${expression} string text`
+    
+    tag `string text ${expression} string text`
+    ```
+
+    
+
+  - 문자열 안에 변수 삽입, 복수행에 걸친(=개행 문자를 포함한) 문자열 사용이 가능
+
+  - 작은 따옴표 / 큰 따옴표 대신 (`)(백쿼트)로 문자열 감쌈.
+
+  - 이스케이프 시퀀스 말고 그대로 사용할 수 있다는 장점.
+
+- 배열 리터럴
+
+- [객체 리터럴](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Operators/Object_initializer)
+
+  - 문자열을 키로 하여 각 요소에 접근할 수 있는 배열
+  - 해시, 연상 배열 등으로 불림.
+  - 객체 내의 개별 데이터는 프로퍼티(property)로 불림. 문자열이나 수치 등의 정보는 물론, 함수(절차)를 대입하는 것도 가능하다.
+  - 함수가 대입된 프로퍼티는 특별히 메소드로 불림
+  - 객체 리터럴의 프로퍼티에 접근하는 방법은 닷(.) 연산자에 의한 방법과 괄호 구문(['프로퍼티명']) 두가지가 있음.
+
+- 함수 리터럴
+
+- 미정의 값(undefined)
+
+  - 정의되지 않았다 - 본래부터 참조하려는 생각을 하지 않았다.
+  - print 함수 - 본래부터 값을 기대하지 않음.
+  - case
+    - 어떤 변수가 선언 완료 상태에서 값을 부여하지 않은 경우
+    - 미정의된 프로퍼티를 참조하려고 하는 경우
+    - 함수에서 값이 반환되지 않았을 경우
+  - null(널)
+    - 비어있다(= 반환 받고 싶었지만, 해당하는 값이 없다를 의도적으로 전달해야 한다.)
+
+## 4. 연산자
+
+### 1) 주의할 점
+
+- 소수점을 포함한 계산에는 주의가 필요하다.
+
+  ```javascript
+  console.log(0.2 * 3); // 결과 : 0.6000000000000001
+  console.log(0.2 * 3 ===0.6); // 결과 : false
+  ```
+
+- 정확한 연산을 위해, 값을 일단 정수로 바꾼 뒤에 연산을 행하고 다시 소수로 바꾸는 과정 필요.
+
+### 2) 연산자 종류
+
+- 산술 연산자
+- 대입 연산자
+- 비교 연산자
+- 논리 연산자
+- 비트 연산자
+- 그 외의 연산자
+  - ,(콤마) - 좌우의 식을 계속해서 실행
+  - delete - 객체의 프로퍼티나 배열의 요소를 삭제
+  - instanceof - 객체가 지정된 클래스의 인스턴스인지를 판정
+  - new - 새로운 인스턴스를 생성
+  - typeof - 피연산자의 데이터 형을 취득
+  - void - 미정의 값을 되돌림
+
+## 5. 제어구문
+
+### 1) 일반적인 프로그램의 구조
+
+- 기술된 순서대로 처리를 실시하는 순차 구조
+- 조건에 따라 처리를 분기하는 선택 구조
+- 특정의 처리를 반복 실행하는 반복 구조
+
+### 2) 제어 구문의 종류
+
+- 조건에 따라 분기 처리하기 - if 명령
+
+- 식의 값에 따라 분기 처리하기 - switch 명령
+
+- 조건식에 따라 루프 제어하기 - while / do .... while 명령
+
+- 무한루프
+
+- 지정된 횟수만큼만 루프 처리하기 - for 명령
+
+- 연상 배열의 요소를 순서대로 처리하기 - [for ... in 명령](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Statements/for...in)
+
+- 배열 등을 순서대로 처리하기 - [for ... of 명령(ES2015)](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Statements/for...of)
+
+- 루프를 도중에 스킵 / 중단하기 - break / continue 명령
+
+- 예외 처리하기 - [try...catch....finally](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Statements/try...catch)
+
+- JavaScript의 위험한 구문 금지하기 - [Strict 모드](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Strict_mode)
+
+  - '사양으로는 존재하지만 현재는 안정성과 효율성 면에서 사용하지 말아야 할 구문'을 발견하여 오류로 통지해 주는 구조
+
+  - 예시
+
+    - 변수
+      - var 명령의 생략 금지
+      - 나중에 추가 예정인 키워드를 예약어로 추가
+      - 인수/프로퍼티명의 중복 금지
+      - undefined/null로의 대입 금지
+    - 명령
+      - with 명령의 이용 금지
+      - arguments.callee 프로퍼티로의 액세스 금지
+      - eval명령으로 선언된 변수를 주위의 스코프로 확산하지 않기
+    - 그 외
+      - 함수 안의 this는 글로벌 객체를 참조하지 않는다(undefined가 됨)
+      - '0~'의 8진수 표기법은 금지
+
+  - 장점
+
+    - 비 strict 모드의 코드보다도 빠르게 동작하는 경우가 있음
+    - 미래의 JavaScript에서 변경되는 점을 금지함으로써 향후 이행이 간단하게 됨
+    - JavaScript의 '하지 말아야 할 것'을 이해하는 단서가 됨
+
+  - Strict 모드를 활성화하기
+
+    ```javascript
+    'use strict'; // 이후 동작하는 모든 코드에 영향을 미칠 수 있으므로 불안정함.	
+    ```
+
+  - 유효 범위를 한정하기
+
+    ```javascript
+    function hoge(){	
+    'use strict';
+    // 함수의 본체
+    ```
+
+  - Strict 모드는 브라우저 버전 별로 적용되지 않을 수 있음.
+
+- 외부 스크립트를 비동기 방식으로 로드하기 - [async / defer 속성](https://developer.mozilla.org/ko/docs/Web/HTML/Element/script)
