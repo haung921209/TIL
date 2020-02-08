@@ -1,1 +1,2 @@
-- [ ] ㅇ
+- [ ] jcenter, mavenCentral 차이 작성하기
+- [ ] 
