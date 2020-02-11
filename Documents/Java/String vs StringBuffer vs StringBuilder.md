@@ -1,4 +1,4 @@
-# `String` 의 특징
+# String 의 특징
 
 ```java
 String str = "abc";
@@ -47,13 +47,13 @@ System.out.println("test1 + test2의 주소공간 : " + test1.hashCode());
 
 대신, 불변하는 String의 특징은 고정된 값이 단순하게 읽히는 연산에서는 다른 클래스에 비해 빠르게 읽을 수 있는 장점이 있습니다.
 
-## `StringBuffer` 의 특징
+## StringBuffer 의 특징
 
 `StringBuffer`의 `String` Class와 구별되는 가장 큰 특징은 수정이 가능하다는 것입니다. 또한, `StringBuffer`의 가장 큰 특징은 thread-safe입니다. `StringBuffer`는 `StringBuilder`와 비교할 때 multiple thread에서 동기화를 보장합니다.
 
 
 
-## `StringBuilder` 의 특징
+## StringBuilder 의 특징
 
 `StringBuilder` Class 또한 `String` Class와 구별되는 특징은 수정이 가능하다는 것입니다. 하지만 `StringBuffer`와는 다르게, thread-safe를 보장하지 않습니다. 이는 multiple-thread 상황에서는 안정성을 위해 `StringBuffer`를 이용해야 한다는 것을 의미합니다. 반대로, single-thread가 보장되는 상황이라면 비교적 더 빠른 `StringBuilder`를 쓰는 것이 좋습니다. `StringBuilder`는 single-thread 상황이라면 `StringBuffer`와 비교하여 대부분의 경우에서 더 빠릅니다.
 
