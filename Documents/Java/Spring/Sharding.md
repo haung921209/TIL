@@ -270,4 +270,10 @@ public class DataSourceConfig {
 
 ### 1. 동기화 문제
 
-- 
+- 동기화 문제가 팀원으로부터 제기되었다. 
+- `A가 service에서 datasource 바꿈 -> B가 service에서 datasource를 바꿈 -> A가 mapper 호출` 과 같은 방식을 취할 경우, A가 원했던 datasource가 아닌, B의 datasource로 잘못 호출될 수 있다는 이유였다.
+- 해당 문제에 대한 정확한 인식 없이, 임계구역을 설정해주기 위해 mapper 호출하는 곳에 `@Synchronized`를 달아주었다.
+- 결과적으로, Spring에서는 해당 Side effect는 생각할 필요가 없다.
+- 왜냐하면, Spring의 경우, 호출에 대해 Thread 독립적으로 실행되기 때문이다.
+- Thread 독립적이지 않은 것은 Bean에 대해서인데, 따라서 Bean의 지역변수를 설정하는데 있어서는 조심할 필요가 있다.
+- 또한, AbstractDatasource에서 datasource를 바꿔주는 부분에는 이미 `@Synchronized`를 통해 임계구역이 설정되어있기 때문에, 걱정할 필요 없이 진행하면 된다.
